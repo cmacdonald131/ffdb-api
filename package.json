@@ -1,4 +1,6 @@
 {
+    "name": "ffdb-api",
+    "version": "0.1.0",
     "scripts": {
         "test": "mocha --require test/setup.js",
         "dev": "nodemon src/server.js",
