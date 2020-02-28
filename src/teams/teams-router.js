@@ -16,8 +16,8 @@ teamsRouter
   .get((req, res, next) => {
     const knexInstance = req.app.get('db')
     TeamsService.getAllTeams(knexInstance)
-      .then(folders => {
-        res.json(folders.map(serializeTeam))
+      .then(teams => {
+        res.json(teams.map(serializeTeam))
       })
       .catch(next)
   })

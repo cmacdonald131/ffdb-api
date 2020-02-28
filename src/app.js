@@ -8,6 +8,7 @@ const errorHandler = require('./error-handler')
 const teamsRouter = require('./teams/teams-router')
 const authRouter = require('./auth/auth-router')
 const usersRouter = require('./users/users-router')
+const addTeamsRouter = require('./add-team/addteams-router')
 
 const app = express()
 
@@ -19,9 +20,10 @@ app.use(helmet())
 app.use(cors())
 
 
-app.use("/api/teams", teamsRouter)
+app.use("/api/team-page", teamsRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/users', usersRouter)
+app.use('/api/add-team', addTeamsRouter)
 
 app.get('/', (req, res) => {
     res.send('Time to win!')
