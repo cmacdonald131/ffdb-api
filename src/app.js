@@ -1,4 +1,4 @@
-require('dotenv').config({path: __dirname + '/.env'})
+require('dotenv').config({silent: true})
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
