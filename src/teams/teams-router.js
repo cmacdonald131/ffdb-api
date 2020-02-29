@@ -9,6 +9,7 @@ const jsonParser = express.json()
 const serializeTeam = team => ({
   id: team.id,
   name: xss(team.name),
+  
 })
 
 teamsRouter
@@ -22,8 +23,8 @@ teamsRouter
       .catch(next)
   })
   .post(jsonParser, (req, res, next) => {
-    const { name } = req.body
-    const newTeam = { name }
+    const { name, username, password, website } = req.body
+    const newTeam = { name, username, password, website }
 
     for (const [key, value] of Object.entries(newTeam)) {
       if (value == null) {
@@ -80,14 +81,14 @@ teamsRouter
       .catch(next)
   })
   .patch(jsonParser, (req, res, next) => {
-    const { name, email, password } = req.body
-    const teamToUpdate = { name, email, password }
+    const { name, username, website, password } = req.body
+    const teamToUpdate = { name, username, website, password }
 
     const numberOfValues = Object.values(teamToUpdate).filter(Boolean).length
     if (numberOfValues === 0)
       return res.status(400).json({
         error: {
-          message: `Request body must contain either 'name', 'email', or 'password'`
+          message: `Request body must contain either 'name', 'username', 'website, or 'password'`
         }
       })
 

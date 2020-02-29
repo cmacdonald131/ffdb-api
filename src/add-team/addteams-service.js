@@ -8,7 +8,7 @@ const AddTeamsService = {
     return db('ffdb_team')
       .where({ teamname })
       .first()
-      .then(team => !!team)
+      .then(teamname => !!teamname)
   },
   insertUser(db, newTeam) {
     return db
@@ -38,7 +38,7 @@ const AddTeamsService = {
   serializeAddTeam(team) {
     return {
       id: user.id,
-      name: xss(team.name),
+      teamname: xss(team.teamname),
       username: xss(team.username),
       website: xss(team.website),
       password: xss(team.password)
