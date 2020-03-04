@@ -71,7 +71,7 @@ teamsRouter
     res.json(serializeTeam(res.team))
   })
   .delete((req, res, next) => {
-    TeamService.deleteTeam(
+    TeamsService.deleteTeam(
       req.app.get('db'),
       req.params.team_id
     )

@@ -7,7 +7,6 @@ const { NODE_ENV } = require('./config')
 const teamsRouter = require('./teams/teams-router')
 const authRouter = require('./auth/auth-router')
 const usersRouter = require('./users/users-router')
-const errorHandler = require('./error-handler')
 
 
 const app = express()
@@ -27,6 +26,15 @@ app.get('/', (req, res) => {
   res.send('Time to win!')
 })
 
-app.use(errorHandler)
+app.use(function errorHandler(error, req, res, next) {
+  let response
+  if (NODE_ENV === 'production') {
+    response = { error: 'Server error' }
+  } else {
+    console.error(error)
+    response = { error: error.message, object: error }
+  }
+  res.status(500).json(response)
+})
 
 module.exports = app

@@ -71,3 +71,8 @@
 {"message":"secretOrPrivateKey must have a value","level":"error"}
 {"message":"secretOrPrivateKey must have a value","level":"error"}
 {"message":"secretOrPrivateKey must have a value","level":"error"}
+{"message":"no pg_hba.conf entry for host \"73.213.140.215\", user \"fqblaunotmipvk\", database \"dea42l80vtgub0\", SSL off","level":"error"}
+{"message":"no pg_hba.conf entry for host \"73.213.140.215\", user \"fqblaunotmipvk\", database \"dea42l80vtgub0\", SSL off","level":"error"}
+{"message":"no pg_hba.conf entry for host \"73.213.140.215\", user \"fqblaunotmipvk\", database \"dea42l80vtgub0\", SSL off","level":"error"}
+{"message":"role \"cmacd\" does not exist","level":"error"}
+{"message":"TeamService is not defined","level":"error"}
