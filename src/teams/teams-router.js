@@ -2,7 +2,7 @@ const path = require('path')
 const express = require('express')
 const xss = require('xss')
 const TeamsService = require('./teams-service')
-const requireAuth = require('../middleware/jwt-auth')
+const { requireAuth } = require('../middleware/jwt-auth')
 
 const teamsRouter = express.Router()
 const jsonParser = express.json()
@@ -13,7 +13,7 @@ const serializeTeam = team => ({
   username: xss(team.username),
   website: xss(team.website),
   password: xss(team.password),
-  
+
 })
 teamsRouter.use(requireAuth)
 teamsRouter
