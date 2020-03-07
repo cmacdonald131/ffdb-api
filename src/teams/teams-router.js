@@ -39,7 +39,7 @@ teamsRouter
     }
 
     console.log(newTeam);
-
+    newTeam.user_id = req.user.id
     TeamsService.insertTeam(
       req.app.get('db'),
       newTeam
