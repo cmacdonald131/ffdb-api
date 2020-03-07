@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const xss = require('xss')
 const TeamsService = require('./teams-service')
+const requireAuth = require('../middleware/jwt-auth')
 
 const teamsRouter = express.Router()
 const jsonParser = express.json()
@@ -14,12 +15,12 @@ const serializeTeam = team => ({
   password: xss(team.password),
   
 })
-
+teamsRouter.use(requireAuth)
 teamsRouter
   .route('/')
   .get((req, res, next) => {
     const knexInstance = req.app.get('db')
-    TeamsService.getAllTeams(knexInstance)
+    TeamsService.getAllTeams(knexInstance, req.user.id)
       .then(teams => {
         res.json(teams.map(serializeTeam))
       })

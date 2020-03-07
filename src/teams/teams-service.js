@@ -1,6 +1,6 @@
 const TeamsService = {
-    getAllTeams(knex) {
-      return knex.select('*').from('ffdb_team')
+    getAllTeams(knex, id) {
+      return knex.select('*').from('ffdb_team').where('user_id', id)
     },
   
     insertTeam(knex, newTeam) {
