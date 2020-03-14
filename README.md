@@ -1,19 +1,20 @@
-# Fantasy Football Database API
+# Fantasy Football Database (FFDb) API
 
-This is the API for the FFDb
+The live link to the app is https://ffdb-app.now.sh/
 
-## Set up
+[FFDb Frontend GitHub Repo](https://github.com/cmacdonald131/ffdb-app.git)
 
 
+## API Documentation
 
-## Scripts
+Check out the [FFDb API Documentation](https://gist.github.com/cmacdonald131/fa842dae7903cc1767b3dceb451a9142)
 
-Start the application `npm start`
 
-Start nodemon for the application `npm run dev`
+### Technology Used
 
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+This app was built using:
+React,
+CSS,
+Node,
+Express,
+PostreSQL
